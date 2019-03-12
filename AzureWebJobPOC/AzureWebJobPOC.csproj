@@ -4,12 +4,12 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <UseNETCoreGenerator>true</UseNETCoreGenerator>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.3" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Logging.ApplicationInsights" Version="3.0.4" />
     <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.4" />
@@ -28,22 +28,10 @@
 
   <ItemGroup>
     <Content Include="**\*.json" Exclude="bin\**\*;obj\**\*" CopyToOutputDirectory="Always" />
-    <Compile Remove="Assets\**" />
-    <Content Remove="Assets\**" />
-    <EmbeddedResource Remove="Assets\**" />
-    <None Remove="Assets\**" />
+    <None Remove="appsettings.Development.json" />
     <None Update="run.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\common\MyWebJob.Common.Logging\MyWebJob.Common.Logging.csproj" />
-    <ProjectReference Include="..\..\common\MyWebJob.Common.Queues\MyWebJob.Common.Queues.csproj" />
-    <ProjectReference Include="..\..\common\MyWebJob.Common\MyWebJob.Common.csproj" />
-    <ProjectReference Include="..\..\domain\MyWebJob.Infrastructure\MyWebJob.Infrastructure.csproj" />
-    <ProjectReference Include="..\MyWebJob.Common\MyWebJob.Common.csproj" />
-    <ProjectReference Include="..\MyWebJob.Jobs.Common\MyWebJob.Jobs.Common.csproj" />
   </ItemGroup>
 
 </Project>
