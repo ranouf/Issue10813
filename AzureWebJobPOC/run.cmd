@@ -1,2 +1,2 @@
 @echo off
-AzureWebJobPOC.dll
+dotnet AzureWebJobPOC.dll
